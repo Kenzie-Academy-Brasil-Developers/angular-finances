@@ -1,10 +1,11 @@
 <li>
   <div>
-    <span>{{ valueToMoney() }}</span>
-    <p>{{ transaction.description }}</p>
+    <span *ngIf="transaction.type === 'entrada'" class="money blue">{{ valueToMoney() }}</span>
+    <span *ngIf="transaction.type === 'saida'" class="money red">-{{ valueToMoney() }}</span>
+    <p class="paragraph">{{ transaction.description }}</p>
   </div>
   <div>
-    <span>{{ transaction.type }}</span>
+    <span class="paragraph">{{ transaction.type }}</span>
     <button (click)="handleClick()">
       <span class="material-symbols-outlined"> delete </span>
     </button>

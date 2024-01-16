@@ -1,5 +1,3 @@
-@use './global.scss';
-
 .title{
     font-family: $font-primary;
     font-weight: 700;
@@ -31,4 +29,12 @@
     &.red{
         color: $color-red;
     }
+}
+
+.paragraph{
+    font-family: $font-primary;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: $color-black;
 }
