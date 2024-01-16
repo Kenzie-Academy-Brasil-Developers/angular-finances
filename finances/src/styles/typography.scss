@@ -1,0 +1,34 @@
+@use './global.scss';
+
+.title{
+    font-family: $font-primary;
+    font-weight: 700;
+    line-height: 1.6;
+    color: $color-black;
+
+    &.one{
+        font-size: 2rem;
+    }
+
+    &.two{
+        font-size: 1.75rem;
+    }
+
+    &.center{
+        text-align: center;
+    }
+}
+
+.money{
+    font-family: $font-primary;
+    font-weight: 700;
+    line-height: 1.6;
+    
+    &.blue{
+        color: $color-blue1;
+    }
+
+    &.red{
+        color: $color-red;
+    }
+}
