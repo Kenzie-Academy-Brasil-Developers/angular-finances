@@ -1,13 +1,27 @@
 import { Component, Input } from '@angular/core';
 import { ITransaction } from '../../interfaces/transaction.interface';
+import { TransactionService } from '../../services/transaction.service';
 
 @Component({
   selector: 'app-transaction-card',
   standalone: true,
   imports: [],
   templateUrl: './transaction-card.component.html',
-  styleUrl: './transaction-card.component.scss'
+  styleUrl: './transaction-card.component.scss',
 })
 export class TransactionCardComponent {
+  constructor(private transactionService: TransactionService) {}
+
   @Input() transaction!: ITransaction;
+
+  valueToMoney() {
+    return Number(this.transaction.value).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+  }
+
+  handleClick(){
+    this.transactionService.removeTransaction(this.transaction.id);
+  }
 }
