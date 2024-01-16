@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, computed, signal } from '@angular/core';
 import {
   ITransaction,
   TTransactionRegisterFormData,
@@ -7,9 +7,22 @@ import {
 @Injectable({ providedIn: 'root' })
 export class TransactionService {
   readonly transactionList = signal<ITransaction[]>([]);
+  readonly total = computed(() =>
+    this.transactionList().reduce((accValue, transaction) => {
+      if (transaction.type === 'entrada') {
+        return accValue + Number(transaction.value);
+      } else {
+        return accValue - Number(transaction.value);
+      }
+    }, 0)
+  );
 
   getTransactionList() {
     return this.transactionList();
+  }
+
+  getTotal() {
+    return this.total();
   }
 
   addTransaction(formData: TTransactionRegisterFormData) {
