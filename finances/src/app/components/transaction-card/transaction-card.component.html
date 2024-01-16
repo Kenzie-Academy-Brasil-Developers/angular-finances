@@ -1,10 +1,12 @@
 <li>
-    <div>
-        <span>{{ valueToMoney() }}</span>
-        <p>{{ transaction.description }}</p>
-    </div>
-    <div>
-        <span>{{ transaction.type }}</span>
-        <button (click)="handleClick()">Remover transação</button>
-    </div>
+  <div>
+    <span>{{ valueToMoney() }}</span>
+    <p>{{ transaction.description }}</p>
+  </div>
+  <div>
+    <span>{{ transaction.type }}</span>
+    <button (click)="handleClick()">
+      <span class="material-symbols-outlined"> delete </span>
+    </button>
+  </div>
 </li>
