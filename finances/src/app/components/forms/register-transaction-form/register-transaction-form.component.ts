@@ -17,14 +17,18 @@ export class RegisterTransactionFormComponent {
 
   onSubmit(event: Event){
     event.preventDefault();
-    const data = {
-      value: this.value.value as string,
-      type: this.type.value as "entrada" | "saida",
-      description: this.description.value as string
-    }
-    this.transactionService.addTransaction(data);
-    this.value.setValue("");
-    this.type.setValue("entrada");
-    this.description.setValue("");
+    if(this.value.value !== "" && this.description.value !== ""){
+      const data = {
+        value: this.value.value as string,
+        type: this.type.value as "entrada" | "saida",
+        description: this.description.value as string
+      }
+      this.transactionService.addTransaction(data);
+      this.value.setValue("");
+      this.type.setValue("entrada");
+      this.description.setValue("");
+    } else {
+      alert("É necessário preencher os campos para cadastrar uma transação.")
+    }   
   }
 }

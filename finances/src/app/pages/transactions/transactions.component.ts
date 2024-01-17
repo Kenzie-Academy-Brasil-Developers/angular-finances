@@ -4,12 +4,14 @@ import { TotalComponent } from '../../components/total/total.component';
 import { TransactionCardComponent } from '../../components/transaction-card/transaction-card.component';
 import { CommonModule } from '@angular/common';
 import { TransactionService } from '../../services/transaction.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-transactions',
   standalone: true,
   imports: [
     CommonModule,
+    RouterLink,
     RegisterTransactionFormComponent,
     TotalComponent,
     TransactionCardComponent,
