@@ -1,0 +1,13 @@
+.flex-box{
+    padding: 60px 0;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .transaction-list{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
