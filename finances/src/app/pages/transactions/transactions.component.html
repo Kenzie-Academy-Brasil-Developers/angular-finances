@@ -1,13 +1,15 @@
 <main>
-  <div>
-    <h1 class="title one">Cadastre transação</h1>
-    <app-register-transaction-form></app-register-transaction-form>
+  <div class="container">
+    <div class="box">
+      <h1 class="title one">Cadastre transação</h1>
+      <app-register-transaction-form></app-register-transaction-form>
+    </div>
+    <app-total></app-total>
+    <ul>
+      <app-transaction-card
+        *ngFor="let transaction of transactionList"
+        [transaction]="transaction"
+      ></app-transaction-card>
+    </ul>
   </div>
-  <app-total></app-total>
-  <ul>
-    <app-transaction-card
-      *ngFor="let transaction of transactionList"
-      [transaction]="transaction"
-    ></app-transaction-card>
-  </ul>
 </main>
