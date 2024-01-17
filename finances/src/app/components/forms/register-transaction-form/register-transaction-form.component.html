@@ -1,16 +1,16 @@
 <form (submit)="onSubmit($event)">
-  <div>
+  <div class="fieldBox">
     <label for="value">Valor</label>
     <input name="value" type="number" placeholder="R$" [formControl]="value" />
   </div>
-  <div>
+  <div class="fieldBox">
     <label for="type">Tipo</label>
     <select name="type" [formControl]="type">
       <option value="entrada">Entrada</option>
       <option value="saida">Saída</option>
     </select>
   </div>
-  <div>
+  <div class="fieldBox">
     <label for="description">Descrição</label>
     <textarea
       name="description"
